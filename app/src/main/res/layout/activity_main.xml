@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:columnCount="4"
+    android:paddingBottom="15dp"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=""
+        android:layout_gravity="fill"
+        android:layout_columnSpan="4"
+        android:gravity="end|bottom"
+        android:layout_margin="5dp"
+        android:paddingBottom="10dp"
+        style="@style/TextStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clear_text_button"
+        android:layout_column="0"
+        android:text="@string/clear_text_button"
+        android:layout_margin="5dp"
+        style="@style/OtherButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plus_minus_button"
+        android:layout_column="1"
+        android:text="@string/plus_minus_button"
+        android:layout_margin="5dp"
+        style="@style/OtherButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/percent_button"
+        android:layout_column="2"
+        android:text="@string/percent_button"
+        android:layout_margin="5dp"
+        style="@style/OtherButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sub_button"
+        android:layout_column="3"
+        android:text="@string/sub_button"
+        android:layout_margin="5dp"
+        style="@style/OperationButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_7"
+        android:layout_column="0"
+        android:text="@string/button_7"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_8"
+        android:layout_column="1"
+        android:text="@string/button_8"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_9"
+        android:layout_column="2"
+        android:text="@string/button_9"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mul_button"
+        android:layout_column="3"
+        android:text="@string/mul_button"
+        android:layout_margin="5dp"
+        style="@style/OperationButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_4"
+        android:layout_column="0"
+        android:text="@string/button_4"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_5"
+        android:layout_column="1"
+        android:text="@string/button_5"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_6"
+        android:layout_column="2"
+        android:text="@string/button_6"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minus_button"
+        android:layout_column="3"
+        android:text="@string/minus_button"
+        android:layout_margin="5dp"
+        style="@style/OperationButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_1"
+        android:layout_column="0"
+        android:text="@string/button_1"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_2"
+        android:layout_column="1"
+        android:text="@string/button_2"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_3"
+        android:layout_column="2"
+        android:text="@string/button_3"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plus_button"
+        android:layout_column="3"
+        android:text="@string/plus_button"
+        android:layout_margin="5dp"
+        style="@style/OperationButtonStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_0"
+        android:layout_column="0"
+        android:layout_gravity="fill"
+        android:layout_columnSpan="2"
+        android:text="@string/button_0"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dot_button"
+        android:layout_column="2"
+        android:text="@string/dot_button"
+        android:layout_margin="5dp"
+        style="@style/NumberButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/res_button"
+        android:layout_column="3"
+        android:text="@string/res_button"
+        android:layout_margin="5dp"
+        style="@style/OperationButtonStyle" />
+</GridLayout>
