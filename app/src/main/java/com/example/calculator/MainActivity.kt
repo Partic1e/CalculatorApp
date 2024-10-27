@@ -68,16 +68,15 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun Button.numberOnClick(tv: TextView) {
-        if (tv.text.isNotEmpty() && tv.text[0] == '0')
-            tv.text = ""
         this.setOnClickListener {
-            try {
-                if (tv.text.isEmpty() && this.text.toString() == ",")
-                    tv.text = ""
-                else
+            when(this.text) {
+                "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" -> {
                     tv.text = (tv.text.toString() + this.text.toString())
-            } catch (e: Exception) {
-                tv.text = "Error"
+                }
+                "," -> {
+                    if(tv.text.isNotEmpty() && !tv.text.toString().contains(","))
+                        tv.text = (tv.text.toString() + this.text.toString())
+                }
             }
         }
     }
@@ -85,13 +84,10 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun Button.operationOnClick(tv: TextView) {
         this.setOnClickListener {
-            try {
-                tv.text = tv.text.toString().replace(",", ".")
-                listForCalc.add(tv.text.toString())
+            if(tv.text.isNotEmpty()) {
+                listForCalc.add(tv.text.toString().replace(",", "."))
                 listForCalc.add(this.text.toString())
                 tv.text = ""
-            } catch (e: Exception) {
-                tv.text = "Error"
             }
         }
     }
@@ -99,62 +95,45 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun Button.resultOnClick(tv: TextView) {
         this.setOnClickListener {
-            try {
-                val result = doCalculation(tv)
-                tv.text = result
-            } catch (e: Exception) {
-                tv.text = "Error"
-            }
+            val result = doCalculation(tv)
+            tv.text = result
+            listForCalc.clear()
         }
     }
 
     private fun doCalculation(tv: TextView): String {
-        listForCalc.add(tv.text.toString())
+        listForCalc.add(tv.text.toString().replace(",", "."))
         val operation = listForCalc[1]
         var result = 0.0
-        val intResult: Int
-
-        return try {
-            when (operation) {
-                "/" -> result = listForCalc[0].toDouble() / listForCalc[2].toDouble()
-                "*" -> result = listForCalc[0].toDouble() * listForCalc[2].toDouble()
-                "+" -> result = listForCalc[0].toDouble() + listForCalc[2].toDouble()
-                "-" -> result = listForCalc[0].toDouble() - listForCalc[2].toDouble()
-            }
-            if (result.toString() == result.toInt().toString()) {
-                intResult = result.toInt()
-                intResult.toString()
-            } else {
-                result.toString()
-            }
-        } catch (e: Exception) {
-            "Error"
+        when (operation) {
+            "/" -> result = listForCalc[0].toDouble() / listForCalc[2].toDouble()
+            "*" -> result = listForCalc[0].toDouble() * listForCalc[2].toDouble()
+            "+" -> result = listForCalc[0].toDouble() + listForCalc[2].toDouble()
+            "-" -> result = listForCalc[0].toDouble() - listForCalc[2].toDouble()
+        }
+        val intResult: Int = result.toInt()
+        return if (intResult.toDouble() == result) {
+            intResult.toString()
+        } else {
+            result.toString()
         }
     }
 
     @SuppressLint("SetTextI18n")
     fun Button.negativeValueOnClick(tv: TextView) {
         this.setOnClickListener {
-            try {
-                if (tv.text.isNotEmpty() && tv.text[0].toString() != "-")
-                    tv.text = ("-" + tv.text.toString())
-                else
-                    tv.text = tv.text.toString().replace("-", "")
-            } catch (e: Exception) {
-                tv.text = "Error"
-            }
+            if (tv.text.isNotEmpty() && tv.text[0].toString() != "-")
+                tv.text = ("-" + tv.text.toString())
+            else
+                tv.text = tv.text.toString().replace("-", "")
         }
     }
 
     @SuppressLint("SetTextI18n")
     private fun Button.clearOnClick(tv: TextView) {
         this.setOnClickListener {
-            try {
-                tv.text = ""
-                listForCalc.clear()
-            } catch (e: Exception) {
-                tv.text = "Error"
-            }
+            tv.text = ""
+            listForCalc.clear()
         }
     }
 }

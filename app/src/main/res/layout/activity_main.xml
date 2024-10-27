@@ -18,6 +18,8 @@
         android:layout_gravity="fill"
         android:layout_columnSpan="4"
         android:gravity="end|bottom"
+        android:maxLines="1"
+        android:paddingTop="150dp"
         android:layout_margin="5dp"
         android:paddingBottom="10dp"
         style="@style/TextStyle"/>
